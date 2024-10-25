@@ -1,0 +1,17 @@
+meta {
+  name: categorias por página
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/categories?page=0&size=12&sort=name,asc
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 0
+  size: 12
+  sort: name,asc
+}
