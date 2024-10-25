@@ -1,0 +1,17 @@
+meta {
+  name: Inserir uma nova categoria
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{host}}/categories
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name":"Devs"
+  }
+}
