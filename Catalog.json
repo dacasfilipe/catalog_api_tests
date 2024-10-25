@@ -1,0 +1,110 @@
+{
+  "name": "Catalog",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "category",
+      "items": [
+        {
+          "type": "http",
+          "name": "Listar todas categorias",
+          "seq": 1,
+          "request": {
+            "url": "{{host}}/categories",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Obter uma categoria pelo id",
+          "seq": 2,
+          "request": {
+            "url": "{{host}}/categories/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Inserir uma nova categoria",
+          "seq": 3,
+          "request": {
+            "url": "{{host}}/categories",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\":\"Devs\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "product"
+    }
+  ],
+  "activeEnvironmentUid": "uiWtWgYMVE3Xiuyf008Rx",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "host",
+          "value": "http://localhost:8080",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Catalogo"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Catalog",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
