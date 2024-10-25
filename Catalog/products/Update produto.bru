@@ -1,0 +1,21 @@
+meta {
+  name: Update produto
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{host}}/products/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name":"Show do the Rock",
+    "description":"The Rock is better",
+    "price":5000,
+    "imgUrl":"localhost/image",
+    "date":"2024-10-25T19:44:00.00+03:00"
+  }
+}
