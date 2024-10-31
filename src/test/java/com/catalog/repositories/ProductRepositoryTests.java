@@ -2,6 +2,7 @@ package com.catalog.repositories;
 
 import com.catalog.entities.Product;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -18,6 +19,7 @@ public class ProductRepositoryTests {
 
     @Test
     public void deleteShouldDeleteObjectWhenIdExists(){
+        //deletar deveria deletar objeto quando ele existir
         //preparar os dados
         long existingId = 1L;
         //executar a ação
@@ -42,6 +44,41 @@ public class ProductRepositoryTests {
         assertThat(savedProduct).isNotNull();//verifica se é não nulo
         assertThat(savedProduct.getName()).isEqualTo("Test Product");
     }
+
+    @Test
+    @DisplayName("")
+    public void updateShouldChangeAndPersistDataWhenIdExists(){
+        //update deveria modificar e persistir os dados quando o id existir
+        //preparar os dados
+        Product product = new Product(
+                1L,"Phone", "Smartphone",1200.00,
+                "imgProduto",Instant.now());
+        //executar a ação
+        product.setName("Update Phone");
+        product.setPrice(1500.00);
+        product = repository.save(product);
+        //verificar se a ação ocorreu como o esperado
+        Assertions.assertEquals("Update Phone",product.getName() );
+    }
+
+    @Test
+    public void findByIdShouldReturnNonEmptyOptionalWhenExists(){
+        //preparar os dados
+        long existingId = 1L;
+        //executar a ação
+        Optional<Product> result = repository.findById(existingId);
+        //certificar se deu certo
+        //verifica se retornou um objeto
+        Assertions.assertTrue(result.isPresent());
+
+    }
+
+
+
+
+
+
+
 
 
 }
