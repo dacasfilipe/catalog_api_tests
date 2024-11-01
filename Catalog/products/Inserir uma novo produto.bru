@@ -1,0 +1,17 @@
+meta {
+  name: Inserir uma novo produto
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{host}}/products
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name":"Devs"
+  }
+}
